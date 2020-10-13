@@ -1,27 +1,19 @@
 import React from 'react';
 import './myCSS.css'
 
-function Contact(){
+function Contact(props){
     return (
-       <div>
-           <div class="Contact">
-               <img class="avatar" src={contact1.avatar}></img>
-               <div>
-                    <h1 class="name">{contact1.name}</h1> 
-                    <div class="status">
-                        <img src="" class="status-online"></img>
-                        <h2 class="status-text">{contact1.status}</h2> 
-                    </div>
-               </div>
-           </div>
-       </div> 
+        <div class="Contact">
+            <img class="avatar" alt="" src={props.avatar} />
+            <div>
+                <h3 class="name">{props.name}</h3>
+                <div class="status">
+                    <div class={props.online ? "status-online" : "status-offline"} />
+                    <p class="status-text">{props.online ? "online" : "offline"}</p>  
+                </div>
+            </div>
+        </div>
     )
 }
-
-const contact1 = {
-    avatar: "https://www.stickees.com/files/cartoon/the-simpsons/2239-bart-simpson-.png",
-    name: "Bart 1",
-    status: "online"
-  };
 
 export default Contact;
